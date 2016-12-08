@@ -1,0 +1,13 @@
+.blog-list-container.container
+  .row
+  = link-to "blog-post.new" class="btn btn-primary text-right"
+    | Create New
+  hr
+  = each model as |blogPost|
+    .panel.panel-default
+      .panel-heading
+        h3
+          = link-to "blog-post.view" blogPost.id
+            = blogPost.title
+          = link-to "blog-post.edit" blogPost.id class="btn btn-primary pull-right"
+            | Edit
